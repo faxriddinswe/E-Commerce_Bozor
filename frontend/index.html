@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bozor — onlayn do'kon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="top">
+    <a class="logo" href="/">bozor<i>.</i></a>
+    <label class="search">
+      <span class="sr">Qidirish</span>
+      <input id="search" type="search" placeholder="Mahsulot qidiring: quloqchin, krossovka…" autocomplete="off">
+    </label>
+    <nav class="actions">
+      <button class="btn ghost" id="authBtn">Kirish</button>
+      <button class="btn dark" id="cartBtn">Savat <b id="cartCount">0</b></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Kerakli narsa<br>bir necha bosishda<br>eshigingizda.</h1>
+      <p>Elektronika, kiyim, uy va sport mahsulotlari. Narx so'mda, to'lov yetkazilganda.</p>
+      <div class="hero-tiles" aria-hidden="true"><span>🎧</span><span>👟</span><span>💡</span><span>🧘</span></div>
+    </section>
+
+    <section class="catalog">
+      <div class="toolbar">
+        <div class="chips" id="chips" role="tablist"></div>
+        <select id="sort" aria-label="Saralash">
+          <option value="new">Yangilari</option>
+          <option value="rating">Reyting bo'yicha</option>
+          <option value="price_asc">Arzonroq</option>
+          <option value="price_desc">Qimmatroq</option>
+        </select>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+  </main>
+
+  <footer class="foot">© 2026 Bozor Project</footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="Savat">
+    <div class="drawer-head">
+      <h2>Savatingiz</h2><button class="x" data-close aria-label="Yopish">✕</button>
+    </div>
+    <div class="drawer-body" id="cartItems"></div>
+    <div class="drawer-foot">
+      <div class="total"><span>Jami</span><b id="cartTotal">0 so'm</b></div>
+      <button class="btn accent wide" id="checkoutBtn">Buyurtma berish</button>
+    </div>
+  </aside>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <div class="modal-box" id="modalBox"></div>
+  </div>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
